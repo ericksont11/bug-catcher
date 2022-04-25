@@ -4,7 +4,8 @@
     "top": "39%",
     "source": "bug.png",
     "height": "5.33%",
-    "width": "3%"
+    "width": "3%",
+    "text": "Uncaught TypeError: Cannot read property 'length' of undefined"
   },
   {
     "left": "42%",
@@ -18,14 +19,16 @@
     "top": "5.33%",
     "source": "bug.png",
     "height": "5.33%",
-    "width": "3%"
+    "width": "3%",
+    "text": "Uncaught RangeError: Maximum callstack size exceeded"
   },
   {
     "left": "18%",
     "top": "61%",
     "source": "bug.png",
     "height": "5.33%",
-    "width": "3%"
+    "width": "3%",
+    "text": "Uncaught TypeError: Assignment to a constant variable"
   },
   {
     "left": "80%",

@@ -12,6 +12,20 @@ const Object = React.forwardRef((props, ref) => {
     width: props.object.width,
     height: props.object.height,
   };
+  const bugText = {
+    position: "absolute",
+    top: parseFloat(props.object.top) + 6 + "%",
+    left: parseFloat(props.object.left) - 5 + "%",
+    width: "auto",
+    height: "auto",
+    color: "red",
+    backgroundColor: "white",
+    fontFamily: "'Lucida Grande', sans-serif",
+    fontSize: ".75vw",
+    fontWeight: "bolder",
+    padding: ".5%",
+  };
+
   let rotationRef = useRef(rotationPosition);
   const setRefs = () => {
     rotationRef.current = rotationPosition;
@@ -64,15 +78,16 @@ const Object = React.forwardRef((props, ref) => {
   }, []);
 
   return (
-    <>
+    <div>
       <img
         key={`img${props.index}`}
-        ref={ref.current[props.index]}
         style={imgStyle}
+        ref={ref.current[props.index]}
         src={require(`../images/${props.object.source}`)}
         alt={props.object.type}
       />
-    </>
+      <div style={bugText}>{props.object.text}</div>
+    </div>
   );
 });
 
