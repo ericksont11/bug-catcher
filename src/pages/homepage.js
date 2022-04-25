@@ -3,8 +3,6 @@ import Character from "../components/character";
 import Object from "../components/object";
 import { LevelContext } from "../contexts/levelContext";
 import object_locations from "../data/object_locations.json";
-import recycleSource from "../images/recycle.png";
-import Recycle from "../components/recycle";
 import Modal from "../components/modal";
 
 function Homepage() {
@@ -49,7 +47,7 @@ function Homepage() {
               ref={elementsRef}
               object={object}
               index={index}
-              key={`block${index}`}
+              key={`object${index}`}
             />
           );
         })}
