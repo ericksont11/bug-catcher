@@ -15,7 +15,7 @@ const Object = React.forwardRef((props, ref) => {
   const bugText = {
     position: "absolute",
     top: parseFloat(props.object.top) + 6 + "%",
-    left: parseFloat(props.object.left) - 5 + "%",
+    left: parseFloat(props.object.left) - 12 + "%",
     width: "auto",
     height: "auto",
     color: "red",

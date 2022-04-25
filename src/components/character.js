@@ -135,6 +135,10 @@ const Character = React.forwardRef((props, ref) => {
         parseFloat(characterRef.current.characterAttributes.top) < 9 &&
         parseFloat(characterRef.current.characterAttributes.left) < 6
       ) {
+        props.block.current[
+          holdingRef.current.index
+        ].current.nextSibling.style.visibility = "hidden";
+
         props.block.current[pickupRef.current.index].current.style.filter =
           "drop-shadow(0px 0px 10px green) brightness(3)";
         setHoldingItem({ pickup: false, index: "" });
@@ -142,10 +146,21 @@ const Character = React.forwardRef((props, ref) => {
         setHoldingItem({ pickup: false, index: "" });
         props.block.current[holdingRef.current.index].current.style.left =
           characterRef.current.characterAttributes.left;
+        props.block.current[
+          holdingRef.current.index
+        ].current.nextSibling.style.left =
+          parseFloat(characterRef.current.characterAttributes.left) - 12 + "%";
         props.block.current[holdingRef.current.index].current.style.top =
           characterRef.current.characterAttributes.top;
+        props.block.current[
+          holdingRef.current.index
+        ].current.nextSibling.style.top =
+          parseFloat(characterRef.current.characterAttributes.top) + 6 + "%";
         props.block.current[holdingRef.current.index].current.style.visibility =
           "visible";
+        props.block.current[
+          holdingRef.current.index
+        ].current.nextSibling.style.top = "hidden";
       }
     }
   };
