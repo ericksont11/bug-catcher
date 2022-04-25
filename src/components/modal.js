@@ -16,7 +16,7 @@ const Modal = (props) => {
   };
 
   useEffect(() => {
-    const string = "npm run bug-catcher ";
+    const string = "cd bug-catcher/ && npm start ";
     let text = "";
     let time = 0;
     setTimeout(() => {

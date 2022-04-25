@@ -130,6 +130,9 @@ const Character = React.forwardRef((props, ref) => {
         setHoldingItem({ pickup: true, index: pickupRef.current.index });
         props.block.current[pickupRef.current.index].current.style.visibility =
           "hidden";
+        props.block.current[
+          pickupRef.current.index
+        ].current.nextSibling.style.visibility = "hidden";
       } else if (
         holdingRef.current.pickup === true &&
         parseFloat(characterRef.current.characterAttributes.top) < 9 &&
@@ -160,7 +163,7 @@ const Character = React.forwardRef((props, ref) => {
           "visible";
         props.block.current[
           holdingRef.current.index
-        ].current.nextSibling.style.top = "hidden";
+        ].current.nextSibling.style.visibility = "visible";
       }
     }
   };
