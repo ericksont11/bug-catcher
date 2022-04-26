@@ -1,7 +1,30 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { CharacterContext } from "../contexts/characterContext";
 import object_locations from "../data/object_locations.json";
-import CharacterFront from "../images/tim-front.png";
+import DaniFront from "../images/dani-front.png";
+import DaniBack from "../images/dani-back.png";
+import LukeFront from "../images/luke-front.png";
+import LukeBack from "../images/luke-back.png";
+import WesleyFront from "../images/wesley-front.png";
+import WesleyBack from "../images/wesley-back.png";
+import CharacterFront from "../images/dani-front.png";
+import CharacterBack from "../images/dani-back.png";
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+let num = getRandomInt(3);
+if (num === 0) {
+  CharacterFront = DaniFront;
+  CharacterBack = DaniBack;
+} else if (num === 1) {
+  CharacterFront = LukeFront;
+  CharacterBack = LukeBack;
+} else {
+  CharacterFront = WesleyFront;
+  CharacterBack = WesleyBack;
+}
 
 const Character = React.forwardRef((props, ref) => {
   let recentKey = "";
@@ -102,6 +125,7 @@ const Character = React.forwardRef((props, ref) => {
       }, intervalSpeed);
     } else if (e.key === "ArrowDown" || e.key.toLowerCase() === "s") {
       e.preventDefault();
+      ref.current.src = CharacterFront;
       clearInterval(interval);
       if (e.key.toLowerCase() === "s") recentKey = "s";
       if (e.key === "ArrowDown") recentKey = "ArrowDown";
@@ -110,6 +134,7 @@ const Character = React.forwardRef((props, ref) => {
         checkObjects(characterRef.current, 0.5, pickupRef);
       }, intervalSpeed);
     } else if (e.key === "ArrowUp" || e.key.toLowerCase() === "w") {
+      ref.current.src = CharacterBack;
       e.preventDefault();
       clearInterval(interval);
       if (e.key.toLowerCase() === "w") recentKey = "w";
